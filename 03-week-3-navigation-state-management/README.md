@@ -84,7 +84,9 @@ Screenshot aplikasi ToDo:
 
 ![Halaman utama ToDo](screenshots/todo-home.png)
 
-![Halaman Statistik](screenshots/statistik.png)
+<p align="center">
+   <img src="./screenshots/statistik.png" alt="Screenshot halaman Statistik" width="420">
+</p>
 
 Screenshot tambahan setelah data statistik selesai dimuat:
 
