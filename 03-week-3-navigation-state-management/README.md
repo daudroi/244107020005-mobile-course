@@ -36,6 +36,10 @@ Project Flutter ini berisi aplikasi ToDo pada folder `week3_todo`. Praktikum ber
 03-week-3-navigation-state-management/
 |-- README.md
 |-- screenshots/
+|-- week3_navigation/
+|   |-- lib/
+|   |-- test/
+|   |-- README.md
 |-- week3_todo/
 |   |-- lib/
 |   |   |-- main.dart
@@ -53,26 +57,17 @@ Project Flutter ini berisi aplikasi ToDo pada folder `week3_todo`. Praktikum ber
 
 ## Dokumentasi Screenshot
 
-Folder `screenshots/` sekarang berisi dua screenshot lama dan tiga screenshot baru dari aplikasi `week3_todo`:
+Screenshot aplikasi ToDo:
 
-| File saat ini | Isi | Status |
-|---|---|---|
-| `screenshots/home.png` | Halaman `Home` dengan `Item 1` sampai `Item 10` | Contoh navigasi lama, bukan UI ToDo final |
-| `screenshots/detail.png` | Halaman `Detail 1` pada route `/detail/1` | Contoh detail lama, bukan route aplikasi saat ini |
-| `screenshots/todo-home.png` | Halaman utama `ToDo Riverpod` pada route `/` | Screenshot baru dari aplikasi ToDo |
-| `screenshots/statistik.png` | Percobaan dokumentasi route statistik | Perlu dicek ulang manual karena browser debug mempertahankan tampilan halaman ToDo |
-| `screenshots/stats-success.png` | Percobaan dokumentasi route statistik setelah menunggu proses async | Perlu dicek ulang manual karena browser debug mempertahankan tampilan halaman ToDo |
+![Halaman utama ToDo](screenshots/todo-home.png)
 
-Kedua file tersebut sebaiknya diganti atau dilengkapi dengan screenshot dari aplikasi `week3_todo`. Rekomendasi nama dan isi screenshot:
+![Halaman statistik](screenshots/statistik.png)
 
-| Prioritas | Nama file yang direkomendasikan | Isi yang perlu terlihat |
-|---|---|---|
-| 1 | `screenshots/todo-home.png` | Route `/`, minimal satu tugas, checkbox, tombol tambah, dan jumlah tugas belum selesai |
-| 2 | `screenshots/stats-success.png` | Route `/stats` setelah loading selesai dan data statistik tampil |
-| Tambahan | `screenshots/statistik.png` | Route `/stats` saat indikator loading 2 detik sedang tampil |
-| Tambahan | `screenshots/stats-error.png` | Pesan error statistik dan tombol `Coba lagi` setelah simulasi error diaktifkan |
+Screenshot tambahan dari proses statistik:
 
-Jika hanya boleh mengumpulkan dua screenshot, gunakan `todo-home.png` dan `statistik.png`. Untuk melengkapi dokumentasi state `AsyncValue`, ambil juga `stats-error.png` secara manual dari halaman `/stats`. Pada percobaan otomatis saat ini, route `/stats` masih mempertahankan tampilan ToDo sehingga screenshot statistik perlu diverifikasi sebelum dikumpulkan.
+![Statistik setelah data selesai dimuat](screenshots/stats-success.png)
+
+File `home.png` dan `detail.png` adalah screenshot contoh navigasi lama yang tetap disimpan sebagai dokumentasi tambahan. Untuk bukti state error, ambil screenshot `stats-error.png` setelah simulasi error diaktifkan; tampilannya harus memuat pesan error dan tombol `Coba lagi`.
 
 ## Stack Teknologi
 
