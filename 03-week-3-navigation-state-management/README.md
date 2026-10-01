@@ -1,6 +1,6 @@
 # Praktikum 3 - Navigation dan State Management
 
-Project Flutter ini berisi aplikasi ToDo pada folder `week3_todo`. Praktikum berfokus pada navigasi menggunakan GoRouter dan pengelolaan state menggunakan Riverpod, termasuk simulasi state asynchronous `loading`, `error`, dan `data`.
+Project Flutter ini berisi dua implementasi tugas Week 3. `week3_navigation` membahas navigasi dasar dengan GoRouter, sedangkan `week3_todo` menggabungkan navigasi, Riverpod, dan state asynchronous `AsyncValue`.
 
 ## Identitas
 
@@ -11,15 +11,32 @@ Project Flutter ini berisi aplikasi ToDo pada folder `week3_todo`. Praktikum ber
 | Mata kuliah | Mobile Programming |
 | Praktikum | Praktikum 3 - Navigation dan State Management |
 
+## Ringkasan Project
+
+### `week3_navigation` - Navigasi Dasar
+
+- Halaman Home menampilkan 10 item.
+- Setiap item membuka detail berdasarkan parameter dinamis, misalnya `/detail/1`.
+- Route detail dibuat sebagai child route dari route `/`.
+- `context.go('/detail/${index + 1}')` digunakan untuk berpindah ke detail.
+- Halaman detail membaca `state.pathParameters['id']` dari GoRouter.
+
+### `week3_todo` - Navigation dan State Management
+
+- Menambah, mencentang, dan menghapus tugas.
+- State ToDo dikelola oleh Riverpod `Notifier`.
+- Statistik memakai `AsyncNotifier` dan menangani loading, error, serta data.
+- NavigationBar menghubungkan daftar ToDo pada `/` dengan statistik pada `/stats`.
+
 ## Tujuan
 
 - Membuat aplikasi ToDo dengan state terpusat.
 - Memisahkan widget dan logika agar mudah diuji.
-- Menerapkan navigasi dua halaman dengan GoRouter.
+- Menerapkan route detail dinamis dan navigasi dua halaman dengan GoRouter.
 - Memahami tiga state `AsyncValue` pada proses asynchronous.
 - Memverifikasi hasil implementasi dengan analyzer dan widget test.
 
-## Fitur
+## Fitur `week3_todo`
 
 - Menambah, mencentang, dan menghapus tugas.
 - Provider turunan `incompleteTodoProvider` untuk menghitung tugas yang belum selesai.
@@ -57,17 +74,23 @@ Project Flutter ini berisi aplikasi ToDo pada folder `week3_todo`. Praktikum ber
 
 ## Dokumentasi Screenshot
 
+Screenshot navigasi dasar dari `week3_navigation`:
+
+![Halaman Home navigasi](screenshots/home.png)
+
+![Halaman Detail navigasi](screenshots/detail.png)
+
 Screenshot aplikasi ToDo:
 
 ![Halaman utama ToDo](screenshots/todo-home.png)
 
-![Halaman statistik](screenshots/statistik.png)
+![Halaman Statistik](screenshots/statistik.png)
 
-Screenshot tambahan dari proses statistik:
+Screenshot tambahan setelah data statistik selesai dimuat:
 
 ![Statistik setelah data selesai dimuat](screenshots/stats-success.png)
 
-File `home.png` dan `detail.png` adalah screenshot contoh navigasi lama yang tetap disimpan sebagai dokumentasi tambahan. Untuk bukti state error, ambil screenshot `stats-error.png` setelah simulasi error diaktifkan; tampilannya harus memuat pesan error dan tombol `Coba lagi`.
+Screenshot statistik di atas adalah screenshot yang dikirim dari halaman `/stats` dan sudah dimasukkan ke repository. Untuk bukti state error, ambil screenshot `stats-error.png` setelah simulasi error diaktifkan; tampilannya harus memuat pesan error dan tombol `Coba lagi`.
 
 ## Stack Teknologi
 
@@ -78,6 +101,14 @@ File `home.png` dan `detail.png` adalah screenshot contoh navigasi lama yang tet
 - Flutter Test
 
 ## Cara Menjalankan
+
+```powershell
+cd week3_navigation
+flutter pub get
+flutter run
+```
+
+Untuk menjalankan aplikasi ToDo:
 
 ```powershell
 cd week3_todo
@@ -154,7 +185,7 @@ Perbaikan yang dilakukan setelah cross-check:
 
 ## Verifikasi
 
-Perintah dijalankan dari folder `week3_todo`:
+Verifikasi `week3_todo` dijalankan dari folder project tersebut:
 
 ```powershell
 flutter analyze
@@ -167,6 +198,8 @@ Hasil terakhir:
 flutter analyze: No issues found!
 flutter test: All tests passed!
 ```
+
+`week3_navigation` sudah dimasukkan ke commit bersama source, test, README, dan konfigurasi project. Verifikasi ulang project ini sempat terhenti karena ruang disk Windows penuh saat Flutter menulis file sementara, bukan karena laporan error Dart.
 
 ## Referensi
 
