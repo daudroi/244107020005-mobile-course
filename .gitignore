@@ -1,0 +1,23 @@
+# Flutter / Dart build artifacts
+.dart_tool/
+.packages
+build/
+*.lock
+
+# Native platform directories (hanya lib, test, screenshoot, dan konfigurasi yang dipush)
+android/
+ios/
+linux/
+macos/
+web/
+windows/
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.iml
+.metadata
+
+# Operating System files
+.DS_Store
+Thumbs.db
